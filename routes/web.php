@@ -1,10 +1,10 @@
 <?php
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
-});
+});*/
 
-Route::get('/start', 'CalendarController@index')->name('index.home');
+Route::get('/', 'CalendarController@index')->name('index.home');
 
 Route::post('/add-day', 'CalendarController@store');
 

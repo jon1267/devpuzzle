@@ -1794,17 +1794,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Calendar",
   data: function data() {
@@ -1812,7 +1801,9 @@ __webpack_require__.r(__webpack_exports__);
       vacations: [],
       countDays: 0,
       vacationDays: 20,
-      showAdd: true
+      showAdd: true,
+      name: 'Max',
+      headers: ['Name', 'Days / Remaining', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
     };
   },
   created: function created() {
@@ -37308,12 +37299,22 @@ var render = function() {
     _vm._v(" "),
     _c("div", [
       _c("table", { staticClass: "table table-bordered table-striped" }, [
-        _vm._m(0),
+        _c("thead", [
+          _c(
+            "tr",
+            _vm._l(_vm.headers, function(header) {
+              return _c("th", [_vm._v(_vm._s(header))])
+            }),
+            0
+          )
+        ]),
         _vm._v(" "),
         _c("tbody", [
           _c(
             "tr",
             [
+              _c("td", [_vm._v(_vm._s(this.name))]),
+              _vm._v(" "),
               _c("td", [
                 _vm._v(
                   _vm._s(this.vacationDays) +
@@ -37333,42 +37334,7 @@ var render = function() {
     ])
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("thead", [
-      _c("tr", [
-        _c("th", [_vm._v("Days / Remaining")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Jan")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Feb")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Mar")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Apr")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("May")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Jun")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Jul")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Aug")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Sep")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Oct")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Nov")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Dec")])
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 

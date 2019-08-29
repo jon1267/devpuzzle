@@ -18,24 +18,13 @@
             <table class="table table-bordered table-striped" >
                 <thead>
                 <tr>
-                    <th>Days / Remaining</th>
-                    <th>Jan</th>
-                    <th>Feb</th>
-                    <th>Mar</th>
-                    <th>Apr</th>
-                    <th>May</th>
-                    <th>Jun</th>
-                    <th>Jul</th>
-                    <th>Aug</th>
-                    <th>Sep</th>
-                    <th>Oct</th>
-                    <th>Nov</th>
-                    <th>Dec</th>
+                    <th v-for="header in headers">{{ header }}</th>
                 </tr>
                 </thead>
 
                 <tbody>
                 <tr>
+                    <td>{{ this.name }}</td>
                     <td>{{ this.vacationDays }} / {{ this.vacationDays - this.countDays}}</td>
                     <td v-for="(days, month, index) in vacations" > {{ days }} </td>
                 </tr>
@@ -56,6 +45,12 @@
                 countDays: 0,
                 vacationDays: 20,
                 showAdd: true,
+                name: 'Max',
+                headers: [
+                    'Name', 'Days / Remaining', 'Jan', 'Feb', 'Mar',
+                    'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct',
+                    'Nov', 'Dec',
+                ],
             }
         },
 
